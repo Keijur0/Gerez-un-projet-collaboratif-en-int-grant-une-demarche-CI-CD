@@ -20,14 +20,9 @@ jobs:
         java-version: '11'
         distribution: 'adopt'
 
-    - name: Check Java version
-      run: java -version
-
-    - name: Check Maven version
-      run: mvn -v
-
     - name: Build with Maven
       run: mvn clean verify -X
+      working-directory: ./back
 
     - name: Generate JaCoCo report
       run: mvn jacoco:report
