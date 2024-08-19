@@ -20,8 +20,20 @@ jobs:
         java-version: '11'
         distribution: 'adopt'
 
+    - name: Check Java version
+      run: java -version
+
+    - name: Check Maven version
+      run: mvn -v
+
     - name: Build with Maven
-      run: mvn clean verify
+      run: mvn clean verify -X
 
     - name: Generate JaCoCo report
       run: mvn jacoco:report
+
+    - name: Upload JaCoCo report
+      uses: actions/upload-artifact@v2
+      with:
+        name: jacoco-report
+        path: target/site/jacoco
