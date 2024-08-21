@@ -1,34 +1,45 @@
-name: Front-end Tests
+name: Front-end CI-CD workflows
 
 on:
   push:
+    paths:
+      - 'front/**'
+      - '.github/workflows'
     branches: [main]
   pull_request:
+    paths:
+      - 'front/**'
+      - '.github/workflows'
     branches: [main]
+    types:
+      - opened
+      - synchronize
+      - reopened
 
 jobs:
   build:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./front
 
     steps:
     - name: Checkout code
       uses: actions/checkout@v4
 
     - name: Set up Node.js
-      uses: actions/setup-node@v3
+      uses: actions/setup-node@v4
       with:
         node-version: '18'
 
     - name: Install dependencies
       run: npm install
-      working-directory: ./front
 
     - name: Run tests with coverage
       run: npm run test -- --code-coverage --browsers=ChromeHeadless --watch=false
-      working-directory: ./front
 
     - name: Upload coverage report
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v4
       with:
         name: coverage-report
         path: front/coverage/
