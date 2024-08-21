@@ -5,21 +5,16 @@ on:
     paths:
       - 'front/**'
       - '.github/workflows/**'
-    branches:
-      - main
+    branches: [main]
   pull_request:
     paths:
       - 'front/**'
       - '.github/workflows/**'
-    branches:
-      - main
-    types:
-      - opened
-      - synchronize
-      - reopened
+    branches: [main]
+    types: [opened, synchronize, reopened]
 
 jobs:
-  build:
+  build_test_and_analyze:
     runs-on: ubuntu-latest
     defaults:
       run:
@@ -45,3 +40,9 @@ jobs:
       with:
         name: coverage-report
         path: front/coverage/
+
+    - name: Analyze with SonarCloud
+      uses: SonarSource/sonarcloud-github-action@master
+      env:
+        GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+        SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
