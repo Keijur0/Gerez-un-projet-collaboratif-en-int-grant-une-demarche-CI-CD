@@ -4,13 +4,13 @@ on:
   push:
     paths:
       - 'front/**'
-      - '.github/workflows'
+      - '.github/workflows/**'
     branches:
       - main
   pull_request:
     paths:
       - 'front/**'
-      - '.github/workflows'
+      - '.github/workflows/**'
     branches:
       - main
     types:
