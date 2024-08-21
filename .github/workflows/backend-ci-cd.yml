@@ -5,12 +5,14 @@ on:
     paths: 
       - 'back/**'
       - '.github/workflows'
-    branches: [main]
+    branches:
+      - main
   pull_request:
     paths:
       - 'back/**'
       - '.github/workflows'
-    branches: [main]
+    branches:
+      - main
     types:
       - opened
       - synchronize
