@@ -16,6 +16,7 @@
 	<properties>
 		<java.version>11</java.version>
 		<sonar.organization>keijur0</sonar.organization>
+		<sonar.projectKey>Keijur0_Gerez-un-projet-collaboratif-en-int-grant-une-demarche-CI-CD</sonar.projectKey>
   		<sonar.host.url>https://sonarcloud.io</sonar.host.url>
 	</properties>
 	<dependencies>
