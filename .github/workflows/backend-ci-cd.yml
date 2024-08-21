@@ -1,14 +1,28 @@
-name: Back-end Tests
+name: Back-end CI-CD workflows
 
 on:
   push:
+    paths: 
+      - 'back/**'
+      - '.github/workflows'
     branches: [main]
   pull_request:
+    paths:
+      - 'back/**'
+      - '.github/workflows'
     branches: [main]
-
+    types:
+      - opened
+      - synchronize
+      - reopened
+      
 jobs:
   build:
     runs-on: ubuntu-latest
+
+    defaults:
+      run: 
+        working-directory: ./back
 
     steps:
     - name: Checkout code
@@ -22,11 +36,9 @@ jobs:
 
     - name: Build with Maven
       run: mvn clean verify -X
-      working-directory: ./back
 
     - name: Generate JaCoCo report
       run: mvn jacoco:report
-      working-directory: ./back
 
     - name: Upload JaCoCo report
       uses: actions/upload-artifact@v2
