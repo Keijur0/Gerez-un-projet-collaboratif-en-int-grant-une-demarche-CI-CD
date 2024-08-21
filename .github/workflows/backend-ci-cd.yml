@@ -5,21 +5,16 @@ on:
     paths: 
       - 'back/**'
       - '.github/workflows/**'
-    branches:
-      - main
+    branches: [main]
   pull_request:
     paths:
       - 'back/**'
       - '.github/workflows/**'
-    branches:
-      - main
-    types:
-      - opened
-      - synchronize
-      - reopened
+    branches: [main]
+    types: [opened, synchronize, reopened]
       
 jobs:
-  build:
+  build_test_and_analyze:
     runs-on: ubuntu-latest
 
     defaults:
@@ -47,3 +42,16 @@ jobs:
       with:
         name: jacoco-report
         path: back/target/site/jacoco
+
+    - name: Cache SonarQube packages
+      uses: actions/cache@v1
+      with:
+        path: ~/.sonar/cache
+        key: ${{ runner.os }}-sonar
+        restore-keys: ${{ runner.os }}-sonar
+
+    - name: Analyze with SonarCloud
+      env:
+        SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+        SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
+      run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=keijur0-bobapp-back -Dsonar.projectName='keijur0_bobapp_back'
