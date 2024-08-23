@@ -1,7 +1,7 @@
 # Documentation des GitHub Actions pour le projet BobApp
 
 ## 1. Introduction
-Le repository GitHub "Bobapp" contient deux workflows de CI/CD, l'un pour le backend et le second pour le frontend de l'application. Ces workflows permettent d'automatiser la compilation, les tests, la génération du rapport de couverture de code par les tests, l'analyse de la qualité de code, ainsi que la génération et le déploiement des images Docker.  
+Le repository GitHub contient deux workflows de CI/CD, l'un pour le backend et le second pour le frontend de l'application. Ces workflows permettent d'automatiser la compilation, les tests, la génération du rapport de couverture de code par les tests, l'analyse de la qualité de code, ainsi que la génération et le déploiement des images Docker.  
 Ce document a pour objectif de détailler chaque étape des GitHub Actions, de proposer des KPIs et de rapporter les premières métriques collectées après l'exécution des pipelines. Le document inclura également l'analyse des retours d'utilisateurs pertinents, de manière à identifier les améliorations nécessaires à mettre en place en priorité.  
 
 ## 2. Liens vers le projet SonarCloud et le repository DockerHub
