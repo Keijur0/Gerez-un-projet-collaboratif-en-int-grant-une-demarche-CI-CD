@@ -349,7 +349,7 @@ Ce score permet de confirmer qu'aucune vulnérabilité critique n'a été introd
 
 4. **Evaluation de la maintenabilité du code (Maintainability Rating): A**
 
-Ce KPI consiste à évaluer la maintenabilité du code enfonction de la dette technique identifiée par SonarQube. La dette technique inclut des aspects tels que la complexité cyclomatique, les duplications de code et la structure générale du code. Les notes vont de A à E, où A est la meilleure note.
+Ce KPI consiste à évaluer la maintenabilité du code en fonction de la dette technique identifiée par SonarQube. La dette technique inclut des aspects tels que la complexité cyclomatique, les duplications de code et la structure générale du code. Les notes vont de A à E, où A est la meilleure note.
 
 Le seuil minimum que je recommande pour KPI est **A**.
 
