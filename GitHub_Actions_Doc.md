@@ -1,4 +1,4 @@
-# Documentation des GitHub Actions pour le projet Bobapp
+# Documentation des GitHub Actions pour le projet BobApp
 
 ## 1. Introduction
 Le repository GitHub "Bobapp" contient deux workflows de CI/CD, l'un pour le backend et le second pour le frontend de l'application. Ces workflows permettent d'automatiser la compilation, les tests, la génération du rapport de couverture de code par les tests, l'analyse de la qualité de code, ainsi que la génération et le déploiement des images Docker.  
@@ -93,7 +93,7 @@ ___
     key: ${{ runner.os }}-sonar
     restore-keys: ${{ runner.os }}-sonar
 ```
-**Objectif**: Mise en cache des paquets SonarQube pour optimiser le temps d'éxécution des analyses.
+**Objectif**: Mise en cache des paquets SonarQube pour optimiser le temps d'exécution des analyses.
 ___
 
 1.8. **Analyze with SonarCloud**
@@ -104,12 +104,12 @@ ___
     SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
   run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=keijur0-bobapp-back -Dsonar.projectName='keijur0_bobapp_back'
 ```
-**Objectif**: Analyse du code avec SonarCloud pour vérifier sa qualité et détecter d'éventuels bugs ou vulnéraibilités.
+**Objectif**: Analyse du code avec SonarCloud pour vérifier sa qualité et détecter d'éventuels bugs ou vulnérabilités.
 ___
 
 2. **`build_and_push_docker_image`**
 
-Nécessite l'exécution avec succès de `build_test_and_analyze`
+Nécessite l'exécution avec succès de `build_test_and_analyze`  
 **Objectif**: Builder et déployer une image Docker du backend sur DockerHub.
 
 2.1. **Checkout code**
@@ -328,7 +328,7 @@ Ce KPI consiste à mesurer le pourcentage de code source couvert par les tests a
 
 Le seuil minimum que je recommande pour ce KPI est de **80%**.  
 
-Ce pourcentage permet d'assurer que la majorité du code a été testée, mais il laisse également une certaine marge de flexibilité car certaines parties du code sont parfois difficile à tester.  
+Ce pourcentage permet d'assurer que la majorité du code a été testée, mais il laisse également une certaine marge de flexibilité car certaines parties du code sont parfois difficiles à tester.  
 Ce seuil est aligné sur les standards de qualité Sonar Way proposés par SonarQube. Il offre un bon équilibre entre l'effort déployé pour l'implémentation des tests et la détection des problèmes potentiels.
 
 2. **Evaluation de la fiabilité du code (Reliability Rating): A**
@@ -430,7 +430,7 @@ ___
 ★☆☆☆☆  
 Ca fait une semaine que je ne reçois plus rien, j'ai envoyé un email il y a 5 jours mais toujours pas de nouvelles...
 ```
-**Problème:** L'utilisateur ne reçoit pas de réponse à leur demande d'assistance par email.
+**Problème:** L'utilisateur ne reçoit pas de réponse à leur demande d'assistance par email.  
 **Action:**  Améliorer la réactivité du support en proposant un suivi des demandes sous forme de GitHub Issues pour une gestion plus efficace des problèmes.  
 ___
 ```
