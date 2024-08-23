@@ -355,7 +355,56 @@ Le seuil minimum que je recommande pour KPI est **A**.
 
 Ce seuil permet d'indiquer que le code est bien structuré, facile à comprendre et à maintenir. Cela est essentiel pour permettre des évolutions rapides et éviter des coûts élevés de maintenance sur le long terme.
 
-## 5. Analyse des métriques
+## 5. Analyse des métriques actuelles
+
+### Backend  
+
+#### Couverture de code  
+
+- Couverture globale: **38.8%**
+- Instructions: **32%**
+- Branches: **50%**
+
+#### Résultats d'analyse SonarCloud  
+
+- Sécurité: **A**
+- Fiabilité: **D**
+- Maintenabilité: **A**
+- Couverture: **38.8%**
+
+### Frontend  
+
+#### Couverture de code  
+
+- Couverture globale: **83.3%**
+- Déclarations: **76.92%**
+- Branches: **100%**
+- Fonctions: **57.14%**
+- Lignes: **83.33%**
+
+#### Résultats d'analyse SonarCloud  
+
+- Sécurité: **A**
+- Fiabilité: **A**
+- Maintenabilité: **A**
+- Couverture: **83.3%**
+
+### Synthèse  
+#### Backend:  
+L'analyse des métriques actuelles pour le backend révèle des points critiques qui nécessitent une attention particulière.  
+La couverture de code est globalement faible avec un pourcentage de **38.8%**. Cela signifie qu'une large portion du code n'est pas testée. La couverture des instructions est à 32% et celle des branches est à 50%, ce qui est bien en dessous du seul recommandé (80%).  
+Cette faible couverture expose le backend à un risque élevé de bugs non détectés en production.  
+
+En termes de fiabilité, le backend est noté **D** par SonarCloud, ce qui indique la présence de bugs critiques ou majeurs qui doivent être résolus en priorité pour assurer la stabilité de l'application.  
+Cependant, des points positifs sont à noter, notamment une évaluation **A** pour la sécurité et la maintenabilité, ce qui signifie que le code du backend est gloabelement sécurisé et bien structuré, malgré les problèmes de couverture de tests et de fiabilité.  
+Il est crucial d'améliorer la couverture de test et de résoudre les problèmes de fiabilité pour renforcer la robustesse du backend.
+
+#### Frontend:  
+Le frontend présente des résultats beaucoup plus encourageants. La couverture de code est globalement très bonne avec un pourcentage de **83.3%**, une couverture parfaite des branches à **100%** et une couverture des déclarations à **83.33%**. La couverture des déclarations (**76.92%**) et des fonctions (**57.14%**) est cependant encore un peu en dessous du seuil recommandé, mais reste dans une zone acceptable.  
+Ces résultats indiquent que le frontend est bien testé, réduisant ainsi les risques de bugs en production.  
+
+Les résultats d'analyse de SonarCloud pour le frontend sont excellents, avec des évaluations **A** pour la sécurité, la fiabilité et la maintenabilité. Cela signifie que le code frontend est non seulement bien structuré et sécurisé, mais aussi très fiable, par l'absence de bugs critiques.  
+Malgré ces bons résultats, il serait quand même bénéfique d'implémenter des tests sur les fonctions pour atteindre un niveau optimal de couverture.
 
 ## 6. Analyse des retours utilisateurs
 
@@ -408,17 +457,21 @@ Sur la base des métriques fournies par les couvertures de code, les analyses de
 3. Augmentation de la couverture de code
 
 - Backend: Ajouter des tests unitaires et d'intégration pour atteindre le seuil minimum recommandé (80%).  
-- Frontend: Améliorer la couverture des fonctions en testant les fonctionnalités critiques de l'application.
+- Frontend: Améliorer la couverture des fonctions en testant les fonctionnalités critiques de l'application.  
 
-4. Maintien du niveau de sécurité
+4. Augmentation de la fiabilité  
+
+- Backend: Corriger le potentiel bug critique relevé par SonarCloud afin de rétablir la note "A" en fiabilité.
+
+5. Maintien du niveau de sécurité
 
 - Continuer à prêter une attention particulière au score de sécurité pour conserver la note "A" au fur et à mesure de l'évolution de l'application.
 
-5. Amélioration de la maintenabilité du code
+6. Surveillance de la maintenabilité du code
 
-- Backend: Simplifier le code et améliorer la structure globale du code pour obtenir la note "A" en maintenabilité.
+- Backend: Simplifier le code et améliorer la structure globale du code pour conserver la note "A" en maintenabilité.
 
-6. Prise en compte des retours utilisateurs
+7. Prise en compte des retours utilisateurs
 
 - Introduire de nouvelles fonctionnalités, telles que la suggestion de blague et le post de vidéo, pour retenir les utilisateurs et en attirer de nouveaux.  
 - Assurer une communication régulière et transparente avec les utilisateurs pour maintenir leur engagement et répondre à leurs attentes.
