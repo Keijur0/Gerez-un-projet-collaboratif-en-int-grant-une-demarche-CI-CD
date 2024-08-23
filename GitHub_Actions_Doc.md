@@ -392,11 +392,11 @@ Ce seuil permet d'indiquer que le code est bien structuré, facile à comprendre
 ### Synthèse  
 #### Backend:  
 L'analyse des métriques actuelles pour le backend révèle des points critiques qui nécessitent une attention particulière.  
-La couverture de code est globalement faible avec un pourcentage de **38.8%**. Cela signifie qu'une large portion du code n'est pas testée. La couverture des instructions est à 32% et celle des branches est à 50%, ce qui est bien en dessous du seul recommandé (80%).  
+La couverture de code est globalement faible avec un pourcentage de **38.8%**. Cela signifie qu'une large portion du code n'est pas testée. La couverture des instructions est à 32% et celle des branches est à 50%, ce qui est bien en dessous du seuil recommandé (80%).  
 Cette faible couverture expose le backend à un risque élevé de bugs non détectés en production.  
 
 En termes de fiabilité, le backend est noté **D** par SonarCloud, ce qui indique la présence de bugs critiques ou majeurs qui doivent être résolus en priorité pour assurer la stabilité de l'application.  
-Cependant, des points positifs sont à noter, notamment une évaluation **A** pour la sécurité et la maintenabilité, ce qui signifie que le code du backend est gloabelement sécurisé et bien structuré, malgré les problèmes de couverture de tests et de fiabilité.  
+Cependant, des points positifs sont à noter, notamment une évaluation **A** pour la sécurité et la maintenabilité, ce qui signifie que le code du backend est globalement sécurisé et bien structuré, malgré les problèmes de couverture de tests et de fiabilité.  
 Il est crucial d'améliorer la couverture de test et de résoudre les problèmes de fiabilité pour renforcer la robustesse du backend.
 
 #### Frontend:  
@@ -413,7 +413,7 @@ Voici un résumé des principaux retours:
 
 ```
 ★☆☆☆☆  
-Je mets une étoile car je nep eux pas en mettre zéro ! Impossible de poster une suggestion de blague, le bouton tourne
+Je mets une étoile car je ne peux pas en mettre zéro ! Impossible de poster une suggestion de blague, le bouton tourne
 et fait planter mon navigateur !
 ```
 **Problème:** L'utilisateur mentionne un bug avec un bouton de suggestion de blague, mais cette fonctionnalité n'existe pas dans l'application.  
@@ -437,7 +437,7 @@ ___
 ★★☆☆☆
 J'ai supprimé ce site de mes favoris ce matin, dommage, vraiment dommage.
 ```
-**Problème:** L'utilisateur est déçu et a supprimé l'application de ses favoris. Il n'a pas précisé la raison, mais il est probable que cela vienne de bugs récurrents dont il a fait l'expérience denièrement.  
+**Problème:** L'utilisateur est déçu et a supprimé l'application de ses favoris. Il n'a pas précisé la raison, mais il est probable que cela vienne de bugs récurrents dont il a fait l'expérience dernièrement.  
 **Action:** Augmenter la qualité globale de l'application en corrigeant les bugs existants et en introduisant de nouvelles fonctionnalités attractives pour regagner la confiance des utilisateurs.
 
 
@@ -448,7 +448,7 @@ Sur la base des métriques fournies par les couvertures de code, les analyses de
 1. Résolution des bugs existants
 
 - Corriger les bugs signalés pour améliorer l'expérience utilisateur.
-- S'assurer que toutes les fonctionnalités actuelles fonctionne correctement, et en particulier celles mentionnées par les utilisateurs.
+- S'assurer que toutes les fonctionnalités actuelles fonctionnent correctement, et en particulier celles mentionnées par les utilisateurs.
 
 2. Amélioration des réponses aux support
 
