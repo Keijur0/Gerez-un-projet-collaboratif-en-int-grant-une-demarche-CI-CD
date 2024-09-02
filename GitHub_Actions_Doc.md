@@ -6,7 +6,7 @@ Ce document a pour objectif de détailler chaque étape des GitHub Actions, de p
 
 ## 2. Liens vers le projet SonarCloud et le repository DockerHub
 
-### [SonarCloud](https://hub.docker.com/repositories/keijur0)  
+### [SonarCloud](https://sonarcloud.io/organizations/keijur0/projects)  
 
 ### [DockerHub](https://hub.docker.com/repositories/keijur0)    
 
@@ -242,7 +242,19 @@ ___
 **Objectif**: Enregistrement du rapport de couverture et le rendre accessible sur GitHub.
 ___
 
-1.7. **Analyze with SonarCloud**
+1.7. **Cache SonarQube packages**
+``` yaml
+- name: Cache SonarQube packages
+  uses: actions/cache@v4
+  with:
+    path: ~/.sonar/cache
+    key: ${{ runner.os }}-sonar
+    restore-keys: ${{ runner.os }}-sonar
+```
+**Objectif**: Mise en cache des paquets SonarQube pour optimiser le temps d'exécution des analyses.
+___
+
+1.8. **Analyze with SonarCloud**
 ``` yaml
 - name: Analyze with SonarCloud
   uses: SonarSource/sonarcloud-github-action@master
